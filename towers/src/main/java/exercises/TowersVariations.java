@@ -58,6 +58,13 @@ public class TowersVariations {
      */
     public static void solveVariation(int n, int from, int mid, int to) {
         // TODO 1: Base case — if n == 0 → return.
+        if (n == 0) return;
+        else {
+            solveVariation(n-1, from, to, mid);
+            count += 2;
+            solveVariation(n-1, from, to, mid);
+            solveVariation(n-1, mid, from, to);
+        }
 
         // TODO 2: Recursive case —
         //  a) Move n-1 disks from 'from' to 'mid' (using 'to' as helper)

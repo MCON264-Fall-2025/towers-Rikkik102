@@ -38,6 +38,13 @@ public class TowersOfHanoi {
     public static void solve(int n, char from, char aux, char to, List<String> moves) {
         // TODO: implement recursively
         // if (n == 0) return;
+            if (n == 0) ;
+            else {
+                solve(n - 1, from, to, aux, moves);
+                moves.add(from + " -> " + to);
+                solve(n - 1, aux, from, to, moves);
+            }
+
         // 1) solve(n - 1, from, to, aux, moves);
         // 2) moves.add(from + " -> " + to);
         // 3) solve(n - 1, aux, from, to, moves);
